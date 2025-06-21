@@ -42,4 +42,29 @@ pip freeze > mail_requirements.txt
 deactivate
 ```
 
+## 🌐 Option 2: keras Environment (for web interface)
+```
+# Create and activate keras virtual environment (if not already created)
+py -2 -m virtualenv keras
+keras\Scripts\activate
+
+# Install required packages
+pip install -r keras_requirements.txt
+
+# Disable Colorama (for cleaner logs)
+set FLASK_ENV=production
+
+# Run the Flask app
+cd Code
+py app.py
+```
+🔁 Example CURL request for API testing
+
+```
+curl -X POST -H "Content-Type: application/json" ^
+-d "[{\"body_noFunctionWords\": 5, \"url_noIntLinks\": 2, \"body_richness\": 0.1, \"url_noLinks\": 3, \"url_linkText\": 1}]" ^
+http://127.0.0.1:5000/predict
+```
+
+
 
