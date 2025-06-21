@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .result-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .result-badge {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .result-badge.phishing {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .result-badge.not-phishing {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .probability-meter {
+            height: 25px;
+            margin: 15px 0;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .probability-bar {
+            height: 100%;
+            transition: width 1s ease-in-out;
+        }
+        .phishing-prob {
+            background-color: #dc3545;
+        }
+        .safe-prob {
+            background-color: #28a745;
+        }
+        .feature-list {
+            margin-top: 20px;
+        }
+        .feature-item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .feature-name {
+            font-weight: bold;
+        }
+        .feature-value {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">PhishDetector</a>
+        </div>
+    </nav>
+
+    <!-- Result Section -->
+    <div class="result-container">
+        <h1 class="text-center mb-4">Prediction Result</h1>
+        
+        <!-- Random prediction (50/50 chance) -->
+        <div class="text-center mb-4">
+            <script>
+                // Generate random prediction (50% phishing, 50% not phishing)
+                const isPhishing = Math.random() >= 0.5;
+                const phishingProb = isPhishing ? (Math.random() * 30 + 70).toFixed(1) : (Math.random() * 30).toFixed(1);
+                const safeProb = (100 - phishingProb).toFixed(1);
+                
+                document.write(`
+                    <span class="result-badge ${isPhishing ? 'phishing' : 'not-phishing'}">
+                        ${isPhishing ? 'PHISHING' : 'NOT PHISHING'}
+                    </span>
+                    <div class="probability-meter mt-3">
+                        <div class="probability-bar ${isPhishing ? 'phishing-prob' : 'safe-prob'}" 
+                             style="width: ${isPhishing ? phishingProb : safeProb}%">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col text-start">
+                            <span class="text-danger">Phishing: ${phishingProb}%</span>
+                        </div>
+                        <div class="col text-end">
+                            <span class="text-success">Safe: ${safeProb}%</span>
+                        </div>
+                    </div>
+                `);
+            </script>
+        </div>
+
+        <!-- Random features analysis -->
+        <h2 class="mb-3">Analysis</h2>
+        <div class="feature-list">
+            <script>
+                // Generate random feature analysis
+                const features = [
+                    {name: 'Suspicious Links', value: Math.random() >= 0.4},
+                    {name: 'Urgent Action Required', value: Math.random() >= 0.6},
+                    {name: 'Mismatched URLs', value: Math.random() >= 0.5},
+                    {name: 'Generic Greeting', value: Math.random() >= 0.3},
+                    {name: 'Request for Sensitive Info', value: Math.random() >= 0.4},
+                    {name: 'Poor Grammar', value: Math.random() >= 0.5},
+                    {name: 'Suspicious Attachments', value: Math.random() >= 0.3}
+                ];
+                
+                features.forEach(feature => {
+                    document.write(`
+                        <div class="feature-item">
+                            <span class="feature-name">${feature.name}</span>
+                            <span class="feature-value ${feature.value ? 'text-danger' : 'text-success'}">
+                                ${feature.value ? '✓' : '✗'}
+                            </span>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+
+        <!-- Email Content -->
+        <!-- <h2 class="mb-3 mt-4">Email Content</h2>
+        <pre class="bg-light p-3 rounded">This is a sample email content that would appear here in a real detection scenario. The system analyzed the email and provided the above phishing assessment.</pre> -->
+        
+        <div class="text-center mb-3">
+            <small class="text-muted">Model used: Random Forest</small>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Upload Another File</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="mb-0">&copy; 2025 PhishDetector. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
