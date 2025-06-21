@@ -163,6 +163,9 @@ The dataset used in this project is publicly available on Kaggle:
     </tbody>
 </table>
 
+![Methodology Diagram](imgs/model_performance_curves.png)
+![Methodology Diagram](imgs/classifier_accuracy_comparison.png)
+
 ## Contacts
 ```
 @misc{phishnet2025,
