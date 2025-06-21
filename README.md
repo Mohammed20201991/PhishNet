@@ -5,7 +5,7 @@ PhishNet is a project focused on detecting phishing emails using machine learnin
 ---
 
 ## 📦 Clone the Repository
-
+Recognizing Phishing in Emails by Using Natural Language Processing & Machine Learning Techniques 
 ```bash
 git clone https://github.com/Mohammed20201991/PhishNet.git
 cd PhishNet
@@ -66,5 +66,100 @@ curl -X POST -H "Content-Type: application/json" ^
 http://127.0.0.1:5000/predict
 ```
 
+## Model Training 
+To retrain the phishing detection model from scratch:
+```
+# Create and activate a virtual environment for training
+py -2 -m virtualenv training
+training\Scripts\activate
 
+# Run the training script
+python train/train_and_save_model.py
+```
+
+## Dataset Used
+The dataset used in this project is publicly available on Kaggle:
+
+📎 Phishing Email Dataset (SpamAssassin)
+
+## Results:
+<table>
+    <caption>Evaluation Metrics for All Classifiers</caption>
+    <thead>
+        <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1-score</th>
+            <th>ROC-AUC</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Light GBM</td>
+            <td>0.960</td>
+            <td>0.96</td>
+            <td>0.96</td>
+            <td>0.96</td>
+            <td>0.9934</td>
+        </tr>
+        <tr>
+            <td>Gradient Boosting</td>
+            <td>0.960</td>
+            <td>0.96</td>
+            <td>0.96</td>
+            <td>0.96</td>
+            <td>0.9924</td>
+        </tr>
+        <tr>
+            <td>SVM</td>
+            <td>0.932</td>
+            <td>0.91</td>
+            <td>0.92</td>
+            <td>0.91</td>
+            <td>0.9400</td>
+        </tr>
+        <tr>
+            <td>Random Forest</td>
+            <td>0.956</td>
+            <td>0.94</td>
+            <td>0.95</td>
+            <td>0.94</td>
+            <td>0.9894</td>
+        </tr>
+        <tr>
+            <td>Extra Trees</td>
+            <td>0.940</td>
+            <td>0.95</td>
+            <td>0.94</td>
+            <td>0.95</td>
+            <td>0.9923</td>
+        </tr>
+        <tr>
+            <td>Bagging Classifier</td>
+            <td>0.880</td>
+            <td>0.89</td>
+            <td>0.89</td>
+            <td>0.88</td>
+            <td>0.9550</td>
+        </tr>
+        <tr>
+            <td>Naive Bayes</td>
+            <td>0.970</td>
+            <td>0.96</td>
+            <td>0.96</td>
+            <td>0.96</td>
+            <td>0.9927</td>
+        </tr>
+        <tr>
+            <td>Ensemble</td>
+            <td>0.980</td>
+            <td>0.98</td>
+            <td>0.98</td>
+            <td>0.98</td>
+            <td>0.9956</td>
+        </tr>
+    </tbody>
+</table>
 
