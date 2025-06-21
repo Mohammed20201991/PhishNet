@@ -163,3 +163,15 @@ The dataset used in this project is publicly available on Kaggle:
     </tbody>
 </table>
 
+## Contacts
+```
+@misc{phishnet2025,
+  author       = {Mohammed A. S. Al-Hitawi,Ahmed Hadi Ali AL-Jumaili,Nadaim, Mohammed AlSahibly, Ali Q Saeed,Taher M. Ghazal,Yaseen Hadi Ali},
+  title        = {PhishNet: Recognizing Phishing in Emails by Using Natural Language Processing & Machine Learning Techniques},
+  year         = {2025},
+  publisher    = {GitHub},
+  email        = {al_hitawe@uofallujah.edu.iq},
+  Affilation   = {Computer Centre University of Fallujah},
+  howpublished = {\url{https://github.com/Mohammed20201991/PhishNet}}
+}
+```
