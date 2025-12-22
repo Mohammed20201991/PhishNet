@@ -178,3 +178,12 @@ The dataset used in this project is publicly available on Kaggle:
   howpublished = {\url{https://github.com/Mohammed20201991/PhishNet}}
 }
 ```
+```
+N. A. Mohammed et al., "Recognizing Phishing in Emails by Using Natural Language Processing & Machine Learning Techniques," 
+
+2025 3rd International Conference on Cyber Resilience (ICCR), Dubai, United Arab Emirates, 2025, pp. 1-7, 
+
+doi: 10.1109/ICCR67387.2025.11292212. 
+
+keywords: {Phishing Detection;Natural Language Processing;Machine Learning;Ensemble Learning;Email Security;Classification},
+```
