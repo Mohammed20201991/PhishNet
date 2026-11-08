@@ -187,3 +187,4 @@ doi: 10.1109/ICCR67387.2025.11292212.
 
 keywords: {Phishing Detection;Natural Language Processing;Machine Learning;Ensemble Learning;Email Security;Classification},
 ```
+https://www.scopus.com/pages/publications/105031562667?origin=resultslist
